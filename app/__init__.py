@@ -13,10 +13,11 @@ def create_app():
     load_dotenv()
 
     app = Flask(__name__, instance_relative_config=True)
-    app.config.from_pyfile("config.py")
+    app.config.from_pyfile("config.py")  # instance/config.py
 
-    # DEBUG 설정 없으면 직접 추가해도 됨
-    app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv("DATABASE_URL")
+    # 명시적으로 환경변수에서 가져와도 OK
+    if "SQLALCHEMY_DATABASE_URI" not in app.config:
+        app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv("DATABASE_URL")
 
     db.init_app(app)
     migrate.init_app(app, db)
