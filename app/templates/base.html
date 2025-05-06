@@ -1,1 +1,44 @@
-<!-- Base layout -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>BookClub</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <!-- 🔹 상단 네비게이션 바 -->
+    <header class="topbar">
+        <div class="logo">📚 BookClub</div>
+        <nav class="topnav">
+            <a href="{{ url_for('main.index') }}">홈</a>
+            <a href="#">Browse</a>
+            <a href="#">My Groups</a>
+            <a href="#">My Page</a>
+        </nav>
+        <button id="toggleSidebar">☰ 활동 보기</button>
+    </header>
+
+    <div class="page-container">
+        <!-- 🔸 본문 영역 -->
+        <main class="content">
+            {% block content %}{% endblock %}
+        </main>
+
+        <!-- 🔹 오른쪽 사이드바 -->
+        <aside class="right-sidebar" id="sidebar">
+            <h3>📘 현재 읽는 책</h3>
+            <ul>
+                <li>이방인</li>
+                <li>미드나잇 라이브러리</li>
+            </ul>
+            <h3>📝 최근 쓴 글</h3>
+            <ul>
+                <li><a href="#">'이방인' 독후감</a></li>
+                <li><a href="#">'총균쇠' 요약</a></li>
+            </ul>
+        </aside>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/sidebar.js') }}"></script>
+</body>
+</html>

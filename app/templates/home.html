@@ -1,17 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>BookClub - 연결 테스트</title>
-</head>
-<body>
-    <h1>✅ DB 연결 테스트</h1>
-    <p>등록된 유저 리스트:</p>
-    <ul>
-        {% for user in users %}
-            <li>{{ user.username }}</li>
-        {% else %}
-            <li>유저 없음</li>
-        {% endfor %}
-    </ul>
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>📖 BookClub에 오신 걸 환영합니다!</h1>
+    <p>이건 메인 홈입니다. 사이드바를 통해 탐색해보세요.</p>
+{% endblock %}

@@ -1,0 +1,45 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+}
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #3a3f4b;
+    color: white;
+    padding: 10px 20px;
+}
+.topnav a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+#toggleSidebar {
+    background: #555;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+.page-container {
+    display: flex;
+}
+.content {
+    flex: 1;
+    padding: 30px;
+}
+.right-sidebar {
+    width: 300px;
+    background: #f4f4f4;
+    padding: 20px;
+    position: fixed;
+    right: -320px;
+    top: 50px;
+    height: 100%;
+    transition: right 0.3s ease;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+}
+.right-sidebar.open {
+    right: 0;
+}
